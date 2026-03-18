@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: coachingdekho
+    runtime: docker
+    region: oregon
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
+    routes:
+      - path: /
+        matchType: prefix
